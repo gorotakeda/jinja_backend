@@ -1,4 +1,4 @@
 [flake8]
 max-line-length = 88
 extend-ignore = E203
-exclude = api/migrations, app/models/__init__.py, api/views/__init__.py
+exclude = api/migrations, app/models/__init__.py, api/views/__init__.py, api/tests/__init__.py, api/tests/factories/__init__.py
