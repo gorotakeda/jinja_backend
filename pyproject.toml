@@ -1,0 +1,11 @@
+[tool.black]
+
+exclude = '''
+/(
+    api/migrations
+  | app/models/__init__.py
+  | api/views/__init__.py
+  | api/tests/__init__.py
+  | api/tests/factories/__init__.py
+)/
+'''
