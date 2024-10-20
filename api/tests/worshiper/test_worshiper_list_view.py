@@ -1,7 +1,11 @@
 import os
+import sys
 import django
 from django.test import TestCase
 from django.urls import reverse
+
+# プロジェクトのルートディレクトリをパスに追加
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
 from api.tests.factories.worshiper_factory import WorshiperFactory
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jinja_backend.settings")
