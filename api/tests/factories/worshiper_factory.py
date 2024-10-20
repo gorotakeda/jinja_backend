@@ -1,9 +1,9 @@
-from factory import DjangoModelFactory
+import factory
 
 from api.models.worshiper import Worshiper
 
 
-class WorshiperFactory(DjangoModelFactory):
+class WorshiperFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Worshiper
 
