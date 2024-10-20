@@ -2,6 +2,7 @@ asgiref==3.8.1
 black==24.10.0
 click==8.1.7
 Django==3.2.5
+django-cors-headers==4.5.0
 djangorestframework==3.12.4
 exceptiongroup==1.2.2
 factory-boy==3.3.0
