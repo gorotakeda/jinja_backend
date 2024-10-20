@@ -1,0 +1,12 @@
+from rest_framework import generics
+
+from api.models.worshiper import Worshiper
+from api.serializers.worshiper_serializer import WorshiperSerializer
+
+
+class WorshiperListView(generics.ListAPIView):
+    queryset = Worshiper.objects.all()
+    serializer_class = WorshiperSerializer
+
+    def get_queryset(self):
+        return Worshiper.objects.all()

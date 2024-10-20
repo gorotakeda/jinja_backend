@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from api.views.worshiper.worshiper_list_view import WorshiperListView
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/worshipers/", WorshiperListView.as_view(), name="worshiper_list"),
 ]
