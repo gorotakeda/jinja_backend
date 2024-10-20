@@ -1,6 +1,12 @@
+import os
+import django
+from django.conf import settings
 from django.test import TestCase
 from django.urls import reverse
 from api.tests.factories.worshiper_factory import WorshiperFactory
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jinja_backend.settings")
+django.setup()
 
 
 class WorshiperListViewTest(TestCase):
