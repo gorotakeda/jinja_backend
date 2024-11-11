@@ -30,3 +30,8 @@ python manage.py migrate --fake api zero
 ```bash
 python manage.py loaddata seed_data.json
 ```
+
+# 新しいパッケージをインストールした後に実行
+```bash
+pip freeze > requirements.txt
+```
