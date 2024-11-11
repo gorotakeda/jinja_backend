@@ -20,3 +20,13 @@ flake8
 python manage.py test api.tests.ファイル名
 例:python manage.py test api.tests.worshiper.test_worshiper_list_view
 ```
+
+# テストコードのデータベースの初期化
+```bash
+python manage.py migrate --fake api zero
+```
+
+# seedデータ挿入
+```bash
+python manage.py loaddata seed_data.json
+```

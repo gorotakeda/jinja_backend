@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -50,7 +51,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+]
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = "jinja_backend.urls"
@@ -114,9 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ja"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Tokyo"
 
 USE_I18N = True
 
@@ -152,6 +156,3 @@ LOGGING = {
         },
     },
 }
-
-# CORSの設定
-CORS_ORIGIN_ALLOW_ALL_ORIGINS = True

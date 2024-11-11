@@ -16,7 +16,9 @@ class WorshiperFactory(factory.django.DjangoModelFactory):
     post_code = "123-4567"
     prefecture = "東京都"
     city = "千代田区"
-    street_address_1 = "永田町1-2-3"
+    street_address = "永田町1-2-3"
+    building_name = "マンション101"
     email = "yamada@example.com"
     phone_number = "09012345678"
     is_active = True
+    visited_day = "2024-01-01"

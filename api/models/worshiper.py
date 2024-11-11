@@ -8,7 +8,7 @@ class Worshiper(models.Model):
     first_name_kana = models.CharField(max_length=50, verbose_name="名（かな）")
     gender = models.CharField(
         max_length=10,
-        choices=[("male ", "男性"), ("female", "女性")],
+        choices=[("male", "男性"), ("female", "女性")],
         verbose_name="性別",
     )
     birthday = models.DateField(blank=True, null=True, verbose_name="生年月日")
@@ -26,11 +26,8 @@ class Worshiper(models.Model):
     city = models.CharField(
         max_length=50, blank=True, null=True, verbose_name="市区町村"
     )
-    street_address_1 = models.CharField(
+    street_address = models.CharField(
         max_length=100, blank=True, null=True, verbose_name="町名・番地"
-    )
-    street_address_2 = models.CharField(
-        max_length=100, blank=True, null=True, verbose_name="建物名・部屋番号"
     )
     building_name = models.CharField(
         max_length=100, blank=True, null=True, verbose_name="建物名"
