@@ -1,6 +1,11 @@
 # jinja_backend
 
 # アプリケーション起動
+
+```bash
+source venv/bin/activate
+```
+
 ```bash
 python manage.py runserver
 ```
@@ -29,4 +34,9 @@ python manage.py migrate --fake api zero
 # seedデータ挿入
 ```bash
 python manage.py loaddata seed_data.json
+```
+
+# 新しいパッケージをインストールした後に実行
+```bash
+pip freeze > requirements.txt
 ```
