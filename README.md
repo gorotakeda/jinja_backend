@@ -1,6 +1,11 @@
 # jinja_backend
 
 # アプリケーション起動
+
+```bash
+source venv/bin/activate
+```
+
 ```bash
 python manage.py runserver
 ```
