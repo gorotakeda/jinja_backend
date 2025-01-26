@@ -35,7 +35,7 @@ class WorshiperDetailView(generics.RetrieveAPIView):
                 {"detail": str(e)},
                 status=status.HTTP_404_NOT_FOUND,
             )
-        except Exception as e:
+        except Exception:
             # その他の何らかの異常が起きた場合
             return Response(
                 {"detail": "予期せぬエラーが発生しました。"},
