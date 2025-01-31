@@ -21,10 +21,22 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from api.views.worshiper.worshiper_list_view import WorshiperListView
+from api.views.worshiper.worshiper_detail_view import WorshiperDetailView
+from api.views.worshiper.worshiper_delete_view import WorshiperDeleteView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/worshipers/", WorshiperListView.as_view(), name="worshiper_list"),
+    path(
+        "api/worshipers/<int:pk>/",
+        WorshiperDetailView.as_view(),
+        name="worshiper_detail",
+    ),
+    path(
+        "api/worshipers/<int:pk>/delete/",
+        WorshiperDeleteView.as_view(),
+        name="worshiper_delete",
+    ),
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
