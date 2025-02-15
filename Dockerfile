@@ -9,11 +9,12 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     python3-dev \
     gcc \
+    netcat-openbsd \
     && rm -rf /var/lib/apt/lists/*
 
 # 依存関係のインストール
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt gunicorn==21.2.0
 
 # ソースコードのコピー
 COPY . .
