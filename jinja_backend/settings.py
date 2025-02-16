@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -98,11 +97,11 @@ WSGI_APPLICATION = "jinja_backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("POSTGRES_DB", "jinja_db"),
-        "USER": os.environ.get("POSTGRES_USER", "postgres"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "05604456"),
-        "HOST": os.environ.get("POSTGRES_HOST", "db"),
-        "PORT": os.environ.get("POSTGRES_PORT", "5432"),
+        "NAME": "jinja_db",
+        "USER": "postgres",
+        "PASSWORD": "05604456",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -147,9 +146,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -161,21 +157,15 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "handlers": {
-        "file": {
-            "level": "DEBUG",
-            "class": "logging.FileHandler",
-            "filename": "/var/log/django/debug.log",
-        },
         "console": {
             "level": "DEBUG",
             "class": "logging.StreamHandler",
         },
     },
     "loggers": {
-        "django": {
-            "handlers": ["file", "console"],
-            "level": "INFO",
-            "propagate": True,
+        "django.db.backends": {
+            "handlers": ["console"],
+            "level": "DEBUG",
         },
     },
 }
